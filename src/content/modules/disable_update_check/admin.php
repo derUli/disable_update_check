@@ -1,6 +1,6 @@
 <?php
-define ( "MODULE_ADMIN_HEADLINE", "uManage Server" );
-define ( "MODULE_ADMIN_REQUIRED_PERMISSION", "umanage_server" );
+define ( "MODULE_ADMIN_HEADLINE", get_translation ( "disable_update_check" ) );
+define ( "MODULE_ADMIN_REQUIRED_PERMISSION", "disable_update_check" );
 function disable_update_check_admin() {
 	if (isset ( $_POST ["submit"] )) {
 		if (isset ( $_POST ["disable_package_update_check"] )) {
