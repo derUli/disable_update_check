@@ -1,2 +1,5 @@
 work/*
 dist/*
+.buildpath
+.project
+.settings
