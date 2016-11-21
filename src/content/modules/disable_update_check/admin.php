@@ -23,10 +23,25 @@ function disable_update_check_admin() {
 			<?php if($disable_package_update_check) echo " checked";?>> <label
 			for="disable_package_update_check"><?php translate("disable_package_update_check");?></label>
 	</p>
+	<p>
+		<input type="checkbox" name="disable_core_update_check"
+			id="disable_core_update_check" value="1" disabled
+			<?php if($disable_core_update_check) echo " checked";?>> <label
+			for="disable_core_update_check"><?php translate("disable_core_update_check");?></label>
+	</p>
+	<p>
+		<input type="checkbox" name="disable_core_patch_check"
+			id="disable_core_patch_check" value="1" disabled
+			<?php if($disable_core_patch_check) echo " checked";?>> <label
+			for="disable_core_patch_check"><?php translate("disable_core_patch_check");?></label>
+	</p>
+	<p>
+		<input type="checkbox" name="disable_ulicms_newsfeed"
+			id="disable_ulicms_newsfeed" value="1" disabled
+			<?php if($disable_ulicms_newsfeed) echo " checked";?>> <label
+			for="disable_ulicms_newsfeed"><?php translate("disable_ulicms_newsfeed");?></label>
+	</p>
 	<?php csrf_token_html();?>
-	
-	
-	
 	<p>
 		<input type="submit" name="submit"
 			value="<?php translate("save_changes")?>">
