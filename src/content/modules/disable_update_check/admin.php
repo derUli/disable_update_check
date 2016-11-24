@@ -11,6 +11,7 @@ function disable_update_check_admin() {
 				Settings::delete ( $setting );
 			}
 	}
+}
 	$disable_package_update_check = Settings::get ( "disable_package_update_check" );
 	$disable_core_update_check = Settings::get ( "disable_core_update_check" );
 	$disable_core_patch_check = Settings::get ( "disable_core_patch_check" );
