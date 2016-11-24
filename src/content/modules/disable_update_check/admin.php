@@ -1,9 +1,9 @@
 <?php
 define ( "MODULE_ADMIN_HEADLINE", get_translation ( "disable_update_check" ) );
-define ( "MODULE_ADMIN_REQUIRED_PERMISSION", "disable_update_check" );
+define ( "MODULE_ADMIN_REQUIRED_PERMISSION", "disable_update_check", "disable_ulicms_newsfeed" );
 function disable_update_check_admin() {
 	if (isset ( $_POST ["submit"] )) {
-		$settings = array("disable_package_update_check", "disable_core_update_check", "disable_core_patch_check");
+		$settings = array("disable_package_update_check", "disable_core_update_check", "disable_core_patch_check", "disable_ulicms_newsfeed");
 		foreach($settings as $setting){
 			if (isset ( $_POST [$setting] )) {
 				Settings::set ( $setting, $setting );
@@ -33,13 +33,13 @@ function disable_update_check_admin() {
 	</p>
 	<p>
 		<input type="checkbox" name="disable_core_patch_check"
-			id="disable_core_patch_check" value="1" 
+			id="disable_core_patch_check" value="1"
 			<?php if($disable_core_patch_check) echo " checked";?>> <label
 			for="disable_core_patch_check"><?php translate("disable_core_patch_check");?></label>
 	</p>
 	<p>
 		<input type="checkbox" name="disable_ulicms_newsfeed"
-			id="disable_ulicms_newsfeed" value="1" disabled
+			id="disable_ulicms_newsfeed" value="1"
 			<?php if($disable_ulicms_newsfeed) echo " checked";?>> <label
 			for="disable_ulicms_newsfeed"><?php translate("disable_ulicms_newsfeed");?></label>
 	</p>
