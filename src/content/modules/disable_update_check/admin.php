@@ -3,13 +3,14 @@ define ( "MODULE_ADMIN_HEADLINE", get_translation ( "disable_update_check" ) );
 define ( "MODULE_ADMIN_REQUIRED_PERMISSION", "disable_update_check" );
 function disable_update_check_admin() {
 	if (isset ( $_POST ["submit"] )) {
-		if (isset ( $_POST ["disable_package_update_check"] )) {
-			Settings::set ( "disable_package_update_check", "disable_package_update_check" );
-		} else {
-			Settings::delete ( "disable_package_update_check" );
-		}
+		$settings = array("disable_package_update_check", "disable_core_update_check");
+		foreach($settings as $setting){
+			if (isset ( $_POST [$setting] )) {
+				Settings::set ( $setting, $setting );
+			} else {
+				Settings::delete ( $setting );
+			}
 	}
-	
 	$disable_package_update_check = Settings::get ( "disable_package_update_check" );
 	$disable_core_update_check = Settings::get ( "disable_core_update_check" );
 	$disable_core_patch_check = Settings::get ( "disable_core_patch_check" );
@@ -25,7 +26,7 @@ function disable_update_check_admin() {
 	</p>
 	<p>
 		<input type="checkbox" name="disable_core_update_check"
-			id="disable_core_update_check" value="1" disabled
+			id="disable_core_update_check" value="1"
 			<?php if($disable_core_update_check) echo " checked";?>> <label
 			for="disable_core_update_check"><?php translate("disable_core_update_check");?></label>
 	</p>
