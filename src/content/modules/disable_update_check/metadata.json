@@ -1,7 +1,7 @@
 {
 	"source" : "extend",
-	"version" : "1.1",
+	"version" : "1.2",
 	"embed" : false,
-	"custom_acl" : ["disable_update_check"],
+	"custom_acl" : ["disable_update_check"],
 	"admin_permission" : "disable_update_check"
 }

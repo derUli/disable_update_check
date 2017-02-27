@@ -1,6 +1,6 @@
 {
    "id" : "disable_update_check",
-   "version" : "1.1",
+   "version" : "1.2",
    "description" : "Disable Automatic Update Check",
    "categories" : ["admin", "updates", "privacy"],
    "compatible_from" : "2017.1"
