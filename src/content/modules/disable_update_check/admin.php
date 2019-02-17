@@ -45,8 +45,8 @@ function disable_update_check_admin() {
 	</p>
 	<?php csrf_token_html();?>
 	<p>
-		<input type="submit" name="submit"
-			value="<?php translate("save_changes")?>">
+		<button type="submit" name="submit" class="btn btn-primary">
+		<i class="fa fa-save"></i> <?php translate("save_changes")?></button>
 	</p>
 </form>
 <?php
