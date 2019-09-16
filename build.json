@@ -1,7 +1,7 @@
 {
    "id" : "disable_update_check",
-   "version" : "1.3",
+   "version" : "1.4",
    "description" : "Disable Automatic Update Check",
    "categories" : ["admin", "updates", "privacy"],
-   "compatible_from" : "2019.1.3"
+   "compatible_from" : "2019.3.1"
 }

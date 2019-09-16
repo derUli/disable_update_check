@@ -3,7 +3,7 @@ define ( "MODULE_ADMIN_HEADLINE", get_translation ( "disable_update_check" ) );
 define ( "MODULE_ADMIN_REQUIRED_PERMISSION", "disable_update_check", "disable_ulicms_newsfeed" );
 function disable_update_check_admin() {
 	if (isset ( $_POST ["submit"] )) {
-		$settings = array("disable_package_update_check", "disable_core_update_check", "disable_core_patch_check", "disable_ulicms_newsfeed");
+		$settings = array("disable_core_patch_check", "disable_ulicms_newsfeed");
 		foreach($settings as $setting){
 			if (isset ( $_POST [$setting] )) {
 				Settings::set ( $setting, $setting );
@@ -12,25 +12,11 @@ function disable_update_check_admin() {
 			}
 	}
 }
-	$disable_package_update_check = Settings::get ( "disable_package_update_check" );
-	$disable_core_update_check = Settings::get ( "disable_core_update_check" );
 	$disable_core_patch_check = Settings::get ( "disable_core_patch_check" );
 	$disable_ulicms_newsfeed = Settings::get ( "disable_ulicms_newsfeed" );
 	?>
 
 <form action="<?php echo getModuleAdminSelfPath();?>" method="post">
-	<p>
-		<input type="checkbox" name="disable_package_update_check"
-			id="disable_package_update_check" value="1"
-			<?php if($disable_package_update_check) echo " checked";?>> <label
-			for="disable_package_update_check"><?php translate("disable_package_update_check");?></label>
-	</p>
-	<p>
-		<input type="checkbox" name="disable_core_update_check"
-			id="disable_core_update_check" value="1"
-			<?php if($disable_core_update_check) echo " checked";?>> <label
-			for="disable_core_update_check"><?php translate("disable_core_update_check");?></label>
-	</p>
 	<p>
 		<input type="checkbox" name="disable_core_patch_check"
 			id="disable_core_patch_check" value="1"
